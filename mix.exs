@@ -14,7 +14,7 @@ defmodule Golf.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:cowboy, :logger]]
   end
 
   # Dependencies can be Hex packages:
@@ -27,6 +27,10 @@ defmodule Golf.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    []
+    [
+      {:cowboy, "~> 1.0"},
+      {:plug, "~> 0.12"},
+      {:sqlitex, "~> 0.1"},
+    ]
   end
 end
